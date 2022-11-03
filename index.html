@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap.css" />
+    <style>
+      table {
+        font-size: 13px;
+      }
+
+      .table-bordered > tbody > tr > td,
+      .table-bordered > tbody > tr > th,
+      .table-bordered > tfoot > tr > td,
+      .table-bordered > tfoot > tr > th,
+      .table-bordered > thead > tr > td,
+      .table-bordered > thead > tr > th {
+        border: 1px solid #000;
+      }
+
+      table tr th,
+      table tr td {
+        vertical-align: middle !important;
+      }
+
+      table > thead > tr,
+      table > tbody > tr > td:first-child {
+        text-align: center;
+      }
+
+      table > thead > tr:nth-child(odd) > td,
+      table > thead > tr > th {
+        border-bottom: none;
+      }
+
+      table > thead > tr:nth-child(even) > td {
+        border-top: none;
+        border-bottom: none;
+      }
+
+      table > thead > tr:last-child > td,
+      table > thead > tr:first-child > th {
+        border-bottom: 2px solid #000 !important;
+      }
+
+      .remove-top-border {
+        border-top: none !important;
+      }
+
+      .add-bottom-border {
+        border-bottom: 1px dotted #000 !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <h3 class="text-center">
+        <strong><u>Material Reconciliation</u></strong>
+      </h3>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th rowspan="4">No</th>
+            <th rowspan="4">Packaging Material Item</th>
+            <td>จ่าย</td>
+            <td></td>
+            <td>รับ</td>
+            <td>ใช้</td>
+            <td>เสีย</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Issued</td>
+            <td>รุ่นการรับเข้า</td>
+            <td>Received</td>
+            <td>Used</td>
+            <td>Damaged</td>
+            <td>คืน</td>
+            <td>ทำลาย</td>
+          </tr>
+          <tr>
+            <td class="add-bottom-border">ครั้งที่ 1</td>
+            <td class="remove-top-border">Lot No.</td>
+            <td class="add-bottom-border">ครั้งที่ 1</td>
+            <td class="add-bottom-border">ครั้งที่ 1</td>
+            <td class="add-bottom-border">ครั้งที่ 1</td>
+            <td class="remove-top-border">Return</td>
+            <td class="remove-top-border">Destruction</td>
+          </tr>
+          <tr>
+            <td>ครั้งที่ 2</td>
+            <td></td>
+            <td>ครั้งที่ 2</td>
+            <td>ครั้งที่ 2</td>
+            <td>ครั้งที่ 2</td>
+            <td></td>
+            <td></td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>
+              <div class="display-grid-column">
+                <div>
+                  <input type="checkbox" />
+                  <span>Lorem ipsum dolor sit amet.</span>
+                </div>
+                <div>
+                  <div>
+                    <input type="checkbox" />
+                    <span>Spec</span>
+                  </div>
+                  <div>
+                    <input type="checkbox" />
+                    <span>Add</span>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td>@twitter</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <script src="./jquery.js"></script>
+    <script src="./bootstrap.js"></script>
+  </body>
+</html>

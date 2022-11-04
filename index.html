@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./bootstrap.css" />
     <style>
       table {
-        font-size: 13px;
+        font-size: 14px;
       }
 
       .table-bordered > tbody > tr > td,
@@ -52,6 +52,21 @@
       .add-bottom-border {
         border-bottom: 1px dotted #000 !important;
       }
+
+      .display-grid-column {
+        display: grid;
+        justify-content: space-around;
+        grid-template-columns: 70% 20%;
+      }
+
+      .display-grid-column > div input[type="checkbox"] {
+        width: 17px;
+        height: 17px;
+      }
+
+      .spec-and-add-section > div:last-child {
+        margin-top: 10px;
+      }
     </style>
   </head>
   <body>
@@ -59,11 +74,11 @@
       <h3 class="text-center">
         <strong><u>Material Reconciliation</u></strong>
       </h3>
-      <table class="table table-bordered">
+      <table class="table table-bordered material-table">
         <thead>
           <tr>
             <th rowspan="4">No</th>
-            <th rowspan="4">Packaging Material Item</th>
+            <th rowspan="4" class="col-3">Packaging Material Item</th>
             <td>จ่าย</td>
             <td></td>
             <td>รับ</td>
@@ -100,46 +115,64 @@
             <td></td>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>
-              <div class="display-grid-column">
-                <div>
-                  <input type="checkbox" />
-                  <span>Lorem ipsum dolor sit amet.</span>
-                </div>
-                <div>
-                  <div>
-                    <input type="checkbox" />
-                    <span>Spec</span>
-                  </div>
-                  <div>
-                    <input type="checkbox" />
-                    <span>Add</span>
-                  </div>
-                </div>
-              </div>
-            </td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-          </tr>
-        </tbody>
+        <tbody></tbody>
       </table>
     </div>
     <script src="./jquery.js"></script>
     <script src="./bootstrap.js"></script>
+    <script>
+      const number_of_rows = 20;
+      const increasement_id_text = "@increasement_id";
+      const increasement_number_text = "@increasement_number";
+      const default_row =
+        `	<tr id="${increasement_id_text}">	` +
+        `	 <td rowspan="2">${increasement_number_text}</td>	` +
+        '	<td rowspan="2">	' +
+        '	<div class="display-grid-column">	' +
+        '	 <div class="product-info">	' +
+        '	 <input type="checkbox" class="d-none"/>	' +
+        '	 <span class="text-justify d-none"	' +
+        "	 >Lorem ipsum dolor sit amet consectetur adipisicing elit.	" +
+        "	Magni, officia.</span	" +
+        "	 >	" +
+        "	</div>	" +
+        '	<div class="spec-and-add-section">	' +
+        "	<div>	" +
+        '	<input type="checkbox" />	' +
+        "	<span>Spec</span>	" +
+        "	</div>	" +
+        "	<div>	" +
+        '	<input type="checkbox" />	' +
+        "	<span>Add</span>	" +
+        "</div>	" +
+        "	</div>	" +
+        "</div>	" +
+        "	</td>	" +
+        '	<td class="add-bottom-border"></td>	' +
+        '<td rowspan="2"></td>	' +
+        '	<td class="add-bottom-border"></td>	' +
+        '<td class="add-bottom-border"></td>	' +
+        '	<td class="add-bottom-border"></td>	' +
+        '<td rowspan="2"></td>	' +
+        '	<td rowspan="2"></td>	' +
+        "	</tr>	" +
+        "<tr>	" +
+        '<td class="remove-top-border"></td>	' +
+        '	<td class="remove-top-border"></td>	' +
+        '<td class="remove-top-border"></td>	' +
+        '<td class="remove-top-border"></td>	' +
+        "</tr>	";
+      $(document).ready(() => {
+        var default_body = $(".material-table > tbody");
+        for (let index = 1; index <= number_of_rows; index++) {
+          var text = default_row;
+          text = text
+            .replace(increasement_id_text, `row-${index}`)
+            .replace(increasement_number_text, index);
+          default_body.append(text);
+        }
+        console.log(default_body[0]);
+      });
+    </script>
   </body>
 </html>

@@ -45,6 +45,16 @@
         border-bottom: 2px solid #000 !important;
       }
 
+      /* section > tr > td {
+        border-top: none !important;
+        border-bottom: none !important;
+      } */
+
+      .remove-two-border {
+        border-top: none !important;
+        border-bottom: none !important;
+      }
+
       .remove-top-border {
         border-top: none !important;
       }
@@ -66,6 +76,14 @@
 
       .spec-and-add-section > div:last-child {
         margin-top: 10px;
+      }
+
+      #first-section > tr:first-child {
+        height: 100px;
+      }
+
+      .text-align-bottom {
+        vertical-align: bottom !important;
       }
     </style>
   </head>
@@ -116,56 +134,102 @@
           </tr>
         </thead>
         <tbody>
-          <!-- <tr class="footer-section">
-            <td colspan="2" rowspan="3">
-              <p class="float-right"><b>ลายเซ็น /Signature</b></p>
-            </td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>
-              <p class="text-center">DKSH</b></p>
-            </td>
-            <td></td>
-            <td>
-              <p class="text-center">DKSH /VENDOR</b></p>
-            </td>
-            <td>
-              <p class="text-center">DKSH /VENDOR</b></p>
-            </td>
-            <td>
-              <p class="text-center">DKSH /VENDOR</p>
-            </td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td colspan="2">
-              <p class="float-right"><b>วันที่ /Date</b></p>
-            </td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr> -->
+          <section class="footer-section">
+            <section id="first-section">
+              <tr>
+                <td
+                  colspan="2"
+                  rowspan="2"
+                  class="remove-two-border add-bottom-border"
+                >
+                  <b class="float-right">ลายเซ็น /Signature</b>
+                </td>
+                <td class="remove-two-border"></td>
+                <td class="remove-two-border"></td>
+                <td class="remove-two-border"></td>
+                <td class="remove-two-border"></td>
+                <td class="remove-two-border"></td>
+                <td class="remove-two-border"></td>
+                <td class="remove-two-border"></td>
+              </tr>
+              <tr>
+                <td class="remove-two-border add-bottom-border">DKSH</td>
+                <td class="remove-two-border"></td>
+                <td class="remove-two-border add-bottom-border">
+                  <p class="text-center text-align-bottom">DKSH /VENDOR</p>
+                </td>
+                <td class="remove-two-border add-bottom-border">
+                  <p class="text-center text-align-bottom">DKSH /VENDOR</p>
+                </td>
+                <td class="remove-two-border add-bottom-border">
+                  <p class="text-center">DKSH /VENDOR</p>
+                </td>
+                <td class="remove-two-border add-bottom-border"></td>
+                <td class="remove-two-border add-bottom-border"></td>
+              </tr>
+              <tr>
+                <td colspan="2" class="remove-two-border add-bottom-border">
+                  <p class="float-right"><b>วันที่ /Date</b></p>
+                </td>
+                <td class="remove-two-border add-bottom-border"></td>
+                <td class="remove-two-border"></td>
+                <td class="remove-two-border add-bottom-border"></td>
+                <td class="remove-two-border add-bottom-border"></td>
+                <td class="remove-two-border add-bottom-border"></td>
+                <td class="remove-two-border add-bottom-border"></td>
+                <td class="remove-two-border add-bottom-border"></td>
+              </tr>
+            </section>
+            <section id="second-section">
+              <tr>
+                <td
+                  colspan="2"
+                  rowspan="2"
+                  class="remove-two-border add-bottom-border"
+                >
+                  <p class="float-right"><b>ลายเซ็น /Signature</b></p>
+                </td>
+                <td class="remove-two-border"></td>
+                <td class="remove-two-border"></td>
+                <td class="remove-two-border"></td>
+                <td class="remove-two-border"></td>
+                <td class="remove-two-border"></td>
+                <td class="remove-two-border"></td>
+                <td class="remove-two-border"></td>
+              </tr>
+              <tr>
+                <td class="remove-two-border add-bottom-border">
+                  <p class="text-center">DKSH</p>
+                </td>
+                <td class="remove-two-border add-bottom-border">
+                  <p class="text-center">DKSH</p>
+                </td>
+                <td class="remove-two-border add-bottom-border">
+                  <p class="text-center">DKSH /VENDOR</p>
+                </td>
+                <td class="remove-two-border add-bottom-border">
+                  <p class="text-center">DKSH /VENDOR</p>
+                </td>
+                <td class="remove-two-border add-bottom-border">
+                  <p class="text-center">DKSH /VENDOR</p>
+                </td>
+                <td class="remove-two-border add-bottom-border"></td>
+                <td class="remove-two-border add-bottom-border"></td>
+              </tr>
+              <tr>
+                <td colspan="2" class="remove-top-border add-top-border">
+                  <p class="float-right"><b>วันที่ /Date</b></p>
+                </td>
+                <td class="remove-top-border add-top-border"></td>
+                <td class="remove-top-border add-top-border"></td>
+                <td class="remove-top-border add-top-border"></td>
+                <td class="remove-top-border add-top-border"></td>
+                <td class="remove-top-border add-top-border"></td>
+                <td class="remove-top-border add-top-border"></td>
+                <td class="remove-top-border add-top-border"></td>
+              </tr>
+            </section>
+          </section>
         </tbody>
       </table>
     </div>
@@ -214,15 +278,15 @@
         '<td class="remove-top-border"></td>	' +
         "</tr>	";
       $(document).ready(() => {
-        var default_body = $(".material-table > tbody");
-        for (let index = 1; index <= number_of_rows; index++) {
-          var text = default_row;
-          text = text
-            .replace(increasement_id_text, `row-${index}`)
-            .replace(increasement_number_text, index);
-          default_body.append(text);
-        }
-        console.log(default_body[0]);
+        // var default_body = $(".material-table > tbody");
+        // for (let index = 1; index <= number_of_rows; index++) {
+        //   var text = default_row;
+        //   text = text
+        //     .replace(increasement_id_text, `row-${index}`)
+        //     .replace(increasement_number_text, index);
+        //   default_body.append(text);
+        // }
+        // console.log(default_body[0]);
       });
     </script>
   </body>

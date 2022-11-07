@@ -7,8 +7,9 @@
     <title>Document</title>
     <link rel="stylesheet" href="./bootstrap.css" />
     <style>
+      /* Common Setting */
       table {
-        font-size: 14px;
+        font-size: 10px;
       }
 
       .table-bordered > tbody > tr > td,
@@ -45,11 +46,6 @@
         border-bottom: 2px solid #000 !important;
       }
 
-      /* section > tr > td {
-        border-top: none !important;
-        border-bottom: none !important;
-      } */
-
       .remove-two-border {
         border-top: none !important;
         border-bottom: none !important;
@@ -62,6 +58,18 @@
       .add-bottom-border {
         border-bottom: 1px dotted #000 !important;
       }
+
+      .dot-input-section {
+        display: grid;
+        column-gap: 10px;
+        align-items: end;
+      }
+
+      .dot {
+        border-bottom: 1px dotted #000;
+      }
+
+      /* Material-Reconciliation */
 
       .display-grid-column {
         display: grid;
@@ -81,188 +89,575 @@
       #first-section > tr:first-child {
         height: 100px;
       }
+
+      /* Line Clearance Before Redressing */
+
+      .one-row-table-input {
+        grid-template-columns: 40% 55%;
+      }
+
+      .one-row-input {
+        grid-template-columns: 30% 69%;
+      }
+
+      .two-row-input {
+        grid-template-columns: 25% 38% 14% 20%;
+      }
+
+      /* Demonstrating Sample and Training */
     </style>
   </head>
   <body>
     <div class="container-fluid">
-      <h3 class="text-center">
-        <strong><u>Material Reconciliation</u></strong>
-      </h3>
-      <table class="table table-bordered material-table">
-        <thead>
-          <tr>
-            <th rowspan="4">No</th>
-            <th rowspan="4" class="col-3">Packaging Material Item</th>
-            <td class="col-2">จ่าย</td>
-            <td class="col-2"></td>
-            <td>รับ</td>
-            <td>ใช้</td>
-            <td>เสีย</td>
-            <td class="col-1"></td>
-            <td class="col-1"></td>
-          </tr>
-          <tr>
-            <td>Issued</td>
-            <td>รุ่นการรับเข้า</td>
-            <td>Received</td>
-            <td>Used</td>
-            <td>Damaged</td>
-            <td>คืน</td>
-            <td>ทำลาย</td>
-          </tr>
-          <tr>
-            <td class="add-bottom-border">ครั้งที่ 1</td>
-            <td class="remove-top-border">Lot No.</td>
-            <td class="add-bottom-border">ครั้งที่ 1</td>
-            <td class="add-bottom-border">ครั้งที่ 1</td>
-            <td class="add-bottom-border">ครั้งที่ 1</td>
-            <td class="remove-top-border">Return</td>
-            <td class="remove-top-border">Destruction</td>
-          </tr>
-          <tr>
-            <td>ครั้งที่ 2</td>
-            <td></td>
-            <td>ครั้งที่ 2</td>
-            <td>ครั้งที่ 2</td>
-            <td>ครั้งที่ 2</td>
-            <td></td>
-            <td></td>
-          </tr>
-        </thead>
-        <tbody></tbody>
-        <tfoot>
-          <section id="first-section">
-            <tr>
-              <td
-                colspan="2"
-                rowspan="2"
-                class="remove-two-border add-bottom-border"
-              >
-                <b class="float-right">ลายเซ็น /Signature</b>
-              </td>
-              <td class="remove-two-border"></td>
-              <td class="remove-two-border"></td>
-              <td class="remove-two-border"></td>
-              <td class="remove-two-border"></td>
-              <td class="remove-two-border"></td>
-              <td class="remove-two-border"></td>
-              <td class="remove-two-border"></td>
-            </tr>
-            <tr>
-              <td
-                class="remove-two-border add-bottom-border text-center"
-                style="vertical-align: bottom !important"
-              >
-                DKSH
-              </td>
-              <td class="remove-two-border"></td>
-              <td
-                class="remove-two-border add-bottom-border text-center"
-                style="vertical-align: bottom !important"
-              >
-                DKSH /VENDOR
-              </td>
-              <td
-                class="remove-two-border add-bottom-border text-center"
-                style="vertical-align: bottom !important"
-              >
-                DKSH /VENDOR
-              </td>
-              <td
-                class="remove-two-border add-bottom-border text-center"
-                style="vertical-align: bottom !important"
-              >
-                DKSH /VENDOR
-              </td>
-              <td class="remove-two-border"></td>
-              <td class="remove-two-border add-bottom-border"></td>
-            </tr>
-            <tr>
-              <td colspan="2" class="remove-two-border add-bottom-border">
-                <p class="float-right"><b>วันที่ /Date</b></p>
-              </td>
-              <td class="remove-two-border add-bottom-border"></td>
-              <td class="remove-two-border"></td>
-              <td class="remove-two-border add-bottom-border"></td>
-              <td class="remove-two-border add-bottom-border"></td>
-              <td class="remove-two-border add-bottom-border"></td>
-              <td class="remove-two-border"></td>
-              <td class="remove-two-border add-bottom-border"></td>
-            </tr>
-          </section>
-          <section id="second-section">
-            <tr>
-              <td
-                colspan="2"
-                rowspan="2"
-                class="remove-two-border add-bottom-border"
-              >
-                <p class="float-right"><b>ลายเซ็น /Signature</b></p>
-              </td>
-              <td class="remove-two-border"></td>
-              <td class="remove-two-border"></td>
-              <td class="remove-two-border"></td>
-              <td class="remove-two-border"></td>
-              <td class="remove-two-border"></td>
-              <td class="remove-two-border"></td>
-              <td class="remove-two-border"></td>
-            </tr>
-            <tr>
-              <td
-                class="remove-two-border add-bottom-border text-center"
-                style="vertical-align: bottom !important"
-              >
-                DKSH
-              </td>
-              <td
-                class="remove-two-border add-bottom-border text-center"
-                style="vertical-align: bottom !important"
-              >
-                DKSH
-              </td>
-              <td
-                class="remove-two-border add-bottom-border text-center"
-                style="vertical-align: bottom !important"
-              >
-                DKSH /VENDOR
-              </td>
-              <td
-                class="remove-two-border add-bottom-border text-center"
-                style="vertical-align: bottom !important"
-              >
-                DKSH /VENDOR
-              </td>
-              <td
-                class="remove-two-border add-bottom-border text-center"
-                style="vertical-align: bottom !important"
-              >
-                DKSH /VENDOR
-              </td>
-              <td class="remove-two-border add-bottom-border text-center">
-                DKSH
-              </td>
-              <td class="remove-two-border add-bottom-border"></td>
-            </tr>
-            <tr>
-              <td colspan="2" class="remove-top-border add-top-border">
-                <p class="float-right"><b>วันที่ /Date</b></p>
-              </td>
-              <td class="remove-top-border add-top-border"></td>
-              <td class="remove-top-border add-top-border"></td>
-              <td class="remove-top-border add-top-border"></td>
-              <td class="remove-top-border add-top-border"></td>
-              <td class="remove-top-border add-top-border"></td>
-              <td class="remove-top-border add-top-border"></td>
-              <td class="remove-top-border add-top-border"></td>
-            </tr>
-          </section>
-        </tfoot>
-      </table>
-      <div>
-        <h3 class="float-left ml-3 mt-3">
-          <strong><u>Line Clearance Before Redressing</u></strong>
+      <section id="material-reconciliation">
+        <h3 class="text-center">
+          <strong><u>Material Reconciliation</u></strong>
         </h3>
-      </div>
+        <table class="table table-bordered material-table">
+          <thead>
+            <tr>
+              <th rowspan="4">No</th>
+              <th rowspan="4" class="col-3">Packaging Material Item</th>
+              <td class="col-2">จ่าย</td>
+              <td class="col-2"></td>
+              <td>รับ</td>
+              <td>ใช้</td>
+              <td>เสีย</td>
+              <td class="col-1"></td>
+              <td class="col-1"></td>
+            </tr>
+            <tr>
+              <td>Issued</td>
+              <td>รุ่นการรับเข้า</td>
+              <td>Received</td>
+              <td>Used</td>
+              <td>Damaged</td>
+              <td>คืน</td>
+              <td>ทำลาย</td>
+            </tr>
+            <tr>
+              <td class="add-bottom-border">ครั้งที่ 1</td>
+              <td class="remove-top-border">Lot No.</td>
+              <td class="add-bottom-border">ครั้งที่ 1</td>
+              <td class="add-bottom-border">ครั้งที่ 1</td>
+              <td class="add-bottom-border">ครั้งที่ 1</td>
+              <td class="remove-top-border">Return</td>
+              <td class="remove-top-border">Destruction</td>
+            </tr>
+            <tr>
+              <td>ครั้งที่ 2</td>
+              <td></td>
+              <td>ครั้งที่ 2</td>
+              <td>ครั้งที่ 2</td>
+              <td>ครั้งที่ 2</td>
+              <td></td>
+              <td></td>
+            </tr>
+          </thead>
+          <tbody></tbody>
+          <tfoot>
+            <section id="first-section">
+              <tr>
+                <td
+                  colspan="2"
+                  rowspan="2"
+                  class="remove-two-border add-bottom-border"
+                >
+                  <b class="float-right">ลายเซ็น /Signature</b>
+                </td>
+                <td class="remove-two-border"></td>
+                <td class="remove-two-border"></td>
+                <td class="remove-two-border"></td>
+                <td class="remove-two-border"></td>
+                <td class="remove-two-border"></td>
+                <td class="remove-two-border"></td>
+                <td class="remove-two-border"></td>
+              </tr>
+              <tr>
+                <td
+                  class="remove-two-border add-bottom-border text-center"
+                  style="vertical-align: bottom !important"
+                >
+                  DKSH
+                </td>
+                <td class="remove-two-border"></td>
+                <td
+                  class="remove-two-border add-bottom-border text-center"
+                  style="vertical-align: bottom !important"
+                >
+                  DKSH /VENDOR
+                </td>
+                <td
+                  class="remove-two-border add-bottom-border text-center"
+                  style="vertical-align: bottom !important"
+                >
+                  DKSH /VENDOR
+                </td>
+                <td
+                  class="remove-two-border add-bottom-border text-center"
+                  style="vertical-align: bottom !important"
+                >
+                  DKSH /VENDOR
+                </td>
+                <td class="remove-two-border"></td>
+                <td class="remove-two-border add-bottom-border"></td>
+              </tr>
+              <tr>
+                <td colspan="2" class="remove-two-border add-bottom-border">
+                  <p class="float-right"><b>วันที่ /Date</b></p>
+                </td>
+                <td class="remove-two-border add-bottom-border"></td>
+                <td class="remove-two-border"></td>
+                <td class="remove-two-border add-bottom-border"></td>
+                <td class="remove-two-border add-bottom-border"></td>
+                <td class="remove-two-border add-bottom-border"></td>
+                <td class="remove-two-border"></td>
+                <td class="remove-two-border add-bottom-border"></td>
+              </tr>
+            </section>
+            <section id="second-section">
+              <tr>
+                <td
+                  colspan="2"
+                  rowspan="2"
+                  class="remove-two-border add-bottom-border"
+                >
+                  <p class="float-right"><b>ลายเซ็น /Signature</b></p>
+                </td>
+                <td class="remove-two-border"></td>
+                <td class="remove-two-border"></td>
+                <td class="remove-two-border"></td>
+                <td class="remove-two-border"></td>
+                <td class="remove-two-border"></td>
+                <td class="remove-two-border"></td>
+                <td class="remove-two-border"></td>
+              </tr>
+              <tr>
+                <td
+                  class="remove-two-border add-bottom-border text-center"
+                  style="vertical-align: bottom !important"
+                >
+                  DKSH
+                </td>
+                <td
+                  class="remove-two-border add-bottom-border text-center"
+                  style="vertical-align: bottom !important"
+                >
+                  DKSH
+                </td>
+                <td
+                  class="remove-two-border add-bottom-border text-center"
+                  style="vertical-align: bottom !important"
+                >
+                  DKSH /VENDOR
+                </td>
+                <td
+                  class="remove-two-border add-bottom-border text-center"
+                  style="vertical-align: bottom !important"
+                >
+                  DKSH /VENDOR
+                </td>
+                <td
+                  class="remove-two-border add-bottom-border text-center"
+                  style="vertical-align: bottom !important"
+                >
+                  DKSH /VENDOR
+                </td>
+                <td class="remove-two-border add-bottom-border text-center">
+                  DKSH
+                </td>
+                <td class="remove-two-border add-bottom-border"></td>
+              </tr>
+              <tr>
+                <td colspan="2" class="remove-top-border add-top-border">
+                  <p class="float-right"><b>วันที่ /Date</b></p>
+                </td>
+                <td class="remove-top-border add-top-border"></td>
+                <td class="remove-top-border add-top-border"></td>
+                <td class="remove-top-border add-top-border"></td>
+                <td class="remove-top-border add-top-border"></td>
+                <td class="remove-top-border add-top-border"></td>
+                <td class="remove-top-border add-top-border"></td>
+                <td class="remove-top-border add-top-border"></td>
+              </tr>
+            </section>
+          </tfoot>
+        </table>
+      </section>
+      <section id="line-clearance-before-redressing">
+        <div class="ml-3 mt-3">
+          <h3>
+            <strong><u>Line Clearance Before Redressing</u></strong>
+          </h3>
+          <div class="dot-input-section two-row-input">
+            <div>ลายเซ็นผู้ตรวจสอบ /Signature</div>
+            <div class="dot"></div>
+            <div>(Line Leader) วันที่ /Date</div>
+            <div class="dot"></div>
+          </div>
+        </div>
+        <table class="table table-bordered mt-3" style="text-align: center">
+          <thead>
+            <tr>
+              <th colspan="2">Checklist for Line Clearance</th>
+              <td>1. สินค้า /Product</td>
+              <td>2. วัสดุ /Material</td>
+              <td>3. เอกสาร /Document</td>
+              <td>4. ขยะในถังขยะ /Rubbish</td>
+              <td>ผู้ดำเนินการ /Checked by Redress Staff</td>
+              <td>ผู้ตรวจสอบ /Verified by Line Leader</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th rowspan="2">ตรวจสอบก่อนเริ่มทำรีเดรส /Before</th>
+              <td>พบ /Found</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="remove-two-border"></td>
+              <td class="remove-two-border"></td>
+            </tr>
+            <tr>
+              <td>ไม่พบ /Not Found</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td
+                class="remove-top-border"
+                style="vertical-align: bottom !important"
+              >
+                <div class="dot-input-section one-row-table-input">
+                  <div>วันที่ /Date:</div>
+                  <div class="dot"></div>
+                </div>
+              </td>
+              <td
+                class="remove-top-border"
+                style="vertical-align: bottom !important"
+              >
+                <div class="dot-input-section one-row-table-input">
+                  <div>วันที่ /Date:</div>
+                  <div class="dot"></div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="dot-input-section two-row-input ml-3">
+          <div>รหัสสินค้าก่อนหน้านี้ /Previous Product Code</div>
+          <div class="dot"></div>
+          <div>รุ่นการผลิต /Batch No.</div>
+          <div class="dot"></div>
+        </div>
+        <div class="dot-input-section one-row-input ml-3">
+          <div>เลขที่ใบสั่งงานก่อนหน้านี้ /Previous Job Order No.</div>
+          <div class="dot"></div>
+        </div>
+      </section>
+      <section class="ml-3 mt-3" id="demonstrating-sample-an-training">
+        <h3>
+          <strong><u>Demonstrating Sample and Training</u></strong>
+        </h3>
+        <div class="mt-3">
+          <strong
+            >ผู้ฝึกอบรมและจัดเตรียมตัวอย่าง /Trainer and Demonstrated sample
+            performer:</strong
+          >
+        </div>
+        <div class="dot-input-section">
+          <div class="dot"></div>
+          <div>(ตัวบรรจง /Name)</div>
+        </div>
+        <div class="mt-3">
+          <strong>
+            ผู้ตรวจสอบตัวอย่างและตรวจสอบขั้นตอนการทำรีเดรส /Demonstrated sample
+            and redressing process checker:
+          </strong>
+        </div>
+        <div class="dot-input-section">
+          <div class="dot"></div>
+          <div>(ตัวบรรจง /Name)</div>
+        </div>
+        <div>
+          <div>
+            <strong
+              >ผู้ได้รับการฝึกอบรมและทำรีเดรส (ตัวบรรจง) /Trainee and Redressing
+              performer (Name):</strong
+            >
+          </div>
+          <div>
+            <div>1.</div>
+            <div class="dot"></div>
+            <div>ทำขั้นตอน /Preform in step</div>
+            <div class="dot"></div>
+          </div>
+          <div>
+            <div>วันที่ทำรีเดรส /Date</div>
+            <div class="dot"></div>
+            <div>วันที่งานเสร็จ /Date of Completion</div>
+            <div class="dot">s</div>
+          </div>
+        </div>
+        <div>
+          <div>
+            <input type="checkbox" />
+            <div>
+              ไม่ดึงเอกสารออกจากสินค้า /Not material withdrawn from product
+            </div>
+          </div>
+          <div>
+            <input type="checkbox" />
+            <div>
+              ดึงเอกสารออกจากสินค้า /Material withdrawn from product จำนวน /No.
+              of material
+            </div>
+            <div class="dot"></div>
+            <div>ชิ้น /piece (s)</div>
+          </div>
+        </div>
+        <div>
+          <div class="ml-3 mt-3">
+            <h3>
+              <strong><u>Line Clearance After Redressing</u></strong>
+            </h3>
+            <div class="dot-input-section two-row-input">
+              <div>ลายเซ็นผู้ตรวจสอบ /Signature</div>
+              <div class="dot"></div>
+              <div>(Line Leader) วันที่ /Date</div>
+              <div class="dot"></div>
+            </div>
+          </div>
+          <table class="table table-bordered mt-3" style="text-align: center">
+            <thead>
+              <tr>
+                <th colspan="2">Checklist for Line Clearance</th>
+                <td>1. สินค้า /Product</td>
+                <td>2. วัสดุ /Material</td>
+                <td>3. เอกสาร /Document</td>
+                <td>4. ขยะในถังขยะ /Rubbish</td>
+                <td>ผู้ดำเนินการ /Checked by Redress Staff</td>
+                <td>ผู้ตรวจสอบ /Verified by Line Leader</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th rowspan="2">ตรวจสอบหลังทำรีเดรส /After</th>
+                <td>พบ /Found</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="remove-two-border"></td>
+                <td class="remove-two-border"></td>
+              </tr>
+              <tr>
+                <td>ไม่พบ /Not Found</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td
+                  class="remove-top-border"
+                  style="vertical-align: bottom !important"
+                >
+                  <div class="dot-input-section one-row-table-input">
+                    <div>วันที่ /Date:</div>
+                    <div class="dot"></div>
+                  </div>
+                </td>
+                <td
+                  class="remove-top-border"
+                  style="vertical-align: bottom !important"
+                >
+                  <div class="dot-input-section one-row-table-input">
+                    <div>วันที่ /Date:</div>
+                    <div class="dot"></div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section id="empty-page"></section>
+      <section id="quality-control" class="ml-3 mt-3">
+        <div>
+          <h3>
+            <strong><u>Quality Control</u></strong>
+          </h3>
+          <div class="dot-input-section">
+            <div>รหัสสินค้า /Product Code</div>
+            <div class="dot"></div>
+            <div>ชื่อสินค้า /Product Name</div>
+            <div class="dot"></div>
+            <div>รุ่นการผลิต /Batch No.</div>
+            <div class="dot"></div>
+          </div>
+          <div class="dot-input-section">
+            <div>วันที่เริ่มงาน /Start Date</div>
+            <div class="dot"></div>
+            <div>เวลา /Time</div>
+            <div class="dot"></div>
+            <div>เลขที่ใบสั่งงาน /Job Order No.</div>
+            <div class="dot"></div>
+          </div>
+          <div class="dot-input-section">
+            <div>วันที่งานเสร็จ /Finished Date</div>
+            <div class="dot"></div>
+            <div>เวลา /Time</div>
+            <div class="dot"></div>
+            <div>หมายเลขรีเดรสสเปค /Redress Specification No.</div>
+            <div class="dot"></div>
+          </div>
+        </div>
+        <table class="table table-bordered" id="quanlity-control">
+          <tr>
+            <th colspan="3" rowspan="2">หัวข้อ /Topic</th>
+            <th colspan="2" rowspan="2">มาตรฐาน /Standard</th>
+            <th colspan="11">ครั้งที่ /Sessions</th>
+          </tr>
+          <tr class="repeated-col header-col"></tr>
+          <tr class="repeated-col">
+            <th colspan="5">เวลา /Time</th>
+          </tr>
+          <tr>
+            <th colspan="5">ลายเซ็น /Signature</th>
+          </tr>
+          <tr>
+            <th colspan="5">วันที่ /Date</th>
+          </tr>
+          <tr>
+            <th colspan="5">1. ตรวจสอบก่อนทำงาน /Pre-redress checking</th>
+          </tr>
+          <tr>
+            <td colspan="3">- รุ่นการผลิต /Batch No.</td>
+            <td colspan="2">ตรงกับใบสั่งงาน /In accordance with Job order</td>
+          </tr>
+          <tr>
+            <td colspan="3">- ลักษณะภายนอกสินค้า /Product Appearance</td>
+            <td colspan="2">
+              ไม่บุบ เสียหาย รั่วซึม /No dent, damage or leakage
+            </td>
+          </tr>
+          <tr>
+            <td colspan="3">- วัสดุประกอบการทำ VAS /VAS material</td>
+            <td colspan="2">
+              ตรงกับข้อกำหนด /In accordance with specification
+            </td>
+          </tr>
+          <tr>
+            <th colspan="5">2. ตรวจสอบระหว่างการทำงาน /In process checking</th>
+          </tr>
+          <tr>
+            <td colspan="3">- รุ่นการผลิต /Batch No.</td>
+            <td colspan="2">ตรงกับใบสั่งงาน /In accordance with Job order</td>
+          </tr>
+          <tr>
+            <td colspan="3">- ลักษณะภายนอกสินค้า /Product Appearance</td>
+            <td colspan="2">
+              ไม่บุบ เสียหาย รั่วซึม /No dent, damage or leakage
+            </td>
+          </tr>
+          <tr>
+            <td colspan="3">- ทะเบียนยา /Registration No.</td>
+            <td colspan="2">
+              ตรงกับข้อกำหนด /In accordance with specification
+            </td>
+          </tr>
+          <tr>
+            <td colspan="3">- เอกสารกำกับยา /Leaflet</td>
+            <td colspan="2">
+              ตรงกับข้อกำหนด /In accordance with specification
+            </td>
+          </tr>
+          <tr>
+            <td colspan="3">- สติกเกอร์ราคา /Price Sticker</td>
+            <td colspan="2">
+              ตรงกับข้อกำหนด /In accordance with specification
+            </td>
+          </tr>
+          <tr>
+            <td colspan="3">- โลโก้ /Logo</td>
+            <td colspan="2">
+              ตรงกับข้อกำหนด /In accordance with specification
+            </td>
+          </tr>
+          <tr>
+            <td colspan="3">- สติกเกอร์ยาสิ้นอายุ /Expiry date Sticker</td>
+            <td colspan="2">
+              ตรงกับข้อกำหนด /In accordance with specification
+            </td>
+          </tr>
+          <tr>
+            <td colspan="3">
+              - จำนวนสินค้าที่สุ่มตรวจ (ชิ้น) /Number of sampling
+            </td>
+            <td colspan="2">
+              ตรงกับข้อกำหนด /In accordance with specification
+            </td>
+          </tr>
+          <tr>
+            <td colspan="3">
+              - อุณหภูมิ (กรณีห้องเย็น) /Temperature (Cold room)
+            </td>
+            <td colspan="2">
+              ตรงกับข้อกำหนด /In accordance with specification
+            </td>
+          </tr>
+          <tr>
+            <td colspan="3">- หมายเลขใบงาน /Job order no.</td>
+            <td colspan="2">
+              ตรงกับข้อกำหนด /In accordance with specification
+            </td>
+          </tr>
+          <tr>
+            <td colspan="3">-</td>
+            <td colspan="2">
+              ตรงกับข้อกำหนด /In accordance with specification
+            </td>
+          </tr>
+          <tr>
+            <td colspan="3">-</td>
+            <td colspan="2">
+              ตรงกับข้อกำหนด /In accordance with specification
+            </td>
+          </tr>
+          <tr>
+            <td colspan="3">-</td>
+            <td colspan="2">
+              ตรงกับข้อกำหนด /In accordance with specification
+            </td>
+          </tr>
+          <tr>
+            <td colspan="3">-</td>
+            <td colspan="2">
+              ตรงกับข้อกำหนด /In accordance with specification
+            </td>
+          </tr>
+          <tr>
+            <td colspan="3">-</td>
+            <td colspan="2">
+              ตรงกับข้อกำหนด /In accordance with specification
+            </td>
+          </tr>
+          <tr>
+            <td colspan="3">
+              - จำนวนสินค้าภายในกล่อง /Product quantity per box
+            </td>
+            <td colspan="2">ครบถ้วน ถูกต้อง /In accordance with pack size</td>
+          </tr>
+          <tr>
+            <td colspan="3">
+              - ทิศทางการจัดเรียงสินค้าภายในกล่อง /Product alignment
+            </td>
+            <td colspan="2">อยู่ในลักษณะตั้งขึ้น /In upright position</td>
+          </tr>
+        </table>
+      </section>
+      <div class="pt-5 pb-5">Remove later</div>
     </div>
 
     <script src="./jquery.js"></script>
@@ -273,7 +668,7 @@
       const increasement_number_text = "@increasement_number";
       const default_row =
         `	<tr id="${increasement_id_text}">	` +
-        `	 <td rowspan="2">${increasement_number_text}</td>	` +
+        `	 <td rowspan="2" class="remove-top-border">${increasement_number_text}</td>	` +
         '	<td rowspan="2">' +
         '	<div class="display-grid-column">' +
         '	 <div class="product-info">' +
@@ -311,6 +706,11 @@
         "</tr>";
 
       $(document).ready(() => {
+        repeatFirstSectionRows();
+        repeatQualityControlColumnTable();
+      });
+
+      function repeatFirstSectionRows() {
         var default_body_section = $(".material-table > tbody");
         console.log(default_body_section);
         for (let index = 1; index <= number_of_rows; index++) {
@@ -320,7 +720,22 @@
             .replace(increasement_number_text, index);
           default_body_section.append(text);
         }
-      });
+      }
+
+      function repeatQualityControlColumnTable() {
+        const number_of_rows = $("#quanlity-control tr").length - 1;
+        var increasement_row = 0;
+        var element = $("#quanlity-control tr:not(:first)");
+        while (increasement_row < number_of_rows) {
+          for (let index = 0; index <= 10; index++) {
+            var text = $(element[increasement_row]).hasClass("header-col")
+              ? index
+              : "";
+            $(element[increasement_row]).append(`<th>${text}</th>`);
+          }
+          increasement_row++;
+        }
+      }
     </script>
   </body>
 </html>

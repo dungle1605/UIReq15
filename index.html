@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="./bootstrap.css" />
-    <style>
+    <style type="text/css" media="print,screen">
       /* Common Setting */
       table {
         font-size: 13px;
@@ -96,8 +96,20 @@
         width: 35px;
         height: 35px;
       }
+
+      /* Quanlity Control */
+
+      table#quanlity-control tr.row-light th {
+        color: #495057;
+        background-color: #e9ecef;
+        border-color: #dee2e6;
+      }
       /* Printing */
       @media print {
+        body {
+          -webkit-print-color-adjust: exact;
+        }
+
         table tr .remove-top-border {
           border-top: none !important;
         }
@@ -112,6 +124,12 @@
 
         .dot {
           border-bottom: 1px dotted #393a3a;
+        }
+
+        table#quanlity-control tr.row-light th {
+          color: #495057;
+          background-color: #e9ecef;
+          border-color: #dee2e6;
         }
       }
     </style>
@@ -305,7 +323,7 @@
             <div class="dot"></div>
           </div>
         </div>
-        <table class="table table-bordered mt-3" style="text-align: center">
+        <table class="table table-bordered mt-3 text-center">
           <thead>
             <tr>
               <th colspan="2">Checklist for Line Clearance</th>
@@ -360,9 +378,9 @@
           style="grid-template-columns: 32% 34% 17% 14%"
         >
           <div>รหัสสินค้าก่อนหน้านี้ /Previous Product Code</div>
-          <div class="dot">Lorem ipsum dolor sit amet quo?</div>
+          <div class="dot"></div>
           <div>รุ่นการผลิต /Batch No.</div>
-          <div class="dot">Lorem ipsum dolor</div>
+          <div class="dot"></div>
         </div>
         <div
           class="dot-input-section ml-3 mt-3"
@@ -514,190 +532,222 @@
           </h3>
           <div
             class="dot-input-section mt-3"
-            style="grid-template-columns: repeat(5, 1fr)"
+            style="grid-template-columns: 18% 15% 18% 19% 15% 10%"
           >
             <div>รหัสสินค้า /Product Code</div>
-            <div class="dot"></div>
+            <div class="dot text-center"></div>
             <div>ชื่อสินค้า /Product Name</div>
-            <div class="dot"></div>
+            <div class="dot text-center"></div>
             <div>รุ่นการผลิต /Batch No.</div>
-            <div class="dot"></div>
+            <div class="dot text-center"></div>
           </div>
           <div
-            class="dot-input-section"
-            style="grid-template-columns: 10% 10% 10% 10% 55%"
+            class="dot-input-section mt-3"
+            style="grid-template-columns: 17% 17% 8% 13% 23% 17%"
           >
             <div>วันที่เริ่มงาน /Start Date</div>
-            <div class="dot"></div>
+            <div class="dot text-center"></div>
             <div>เวลา /Time</div>
-            <div class="dot"></div>
+            <div class="dot text-center"></div>
             <div>เลขที่ใบสั่งงาน /Job Order No.</div>
-            <div class="dot"></div>
+            <div class="dot text-center"></div>
           </div>
           <div
-            class="dot-input-section"
-            style="grid-template-columns: 10% 10% 10% 10% 55%"
+            class="dot-input-section mt-3"
+            style="grid-template-columns: 20% 13% 8% 11% 25% 19%"
           >
             <div>วันที่งานเสร็จ /Finished Date</div>
-            <div class="dot"></div>
+            <div class="dot text-center"></div>
             <div>เวลา /Time</div>
-            <div class="dot"></div>
+            <div class="dot text-center"></div>
             <div>หมายเลขรีเดรสสเปค /Redress Specification No.</div>
-            <div class="dot"></div>
+            <div class="dot text-center">MLL009301RD00001</div>
           </div>
         </div>
-        <table class="table table-bordered" id="quanlity-control">
-          <tr>
+        <table class="table table-bordered mt-3" id="quanlity-control">
+          <tr class="row-light">
             <th colspan="3" rowspan="2">หัวข้อ /Topic</th>
             <th colspan="2" rowspan="2">มาตรฐาน /Standard</th>
             <th colspan="11">ครั้งที่ /Sessions</th>
           </tr>
-          <tr class="repeated-col header-col"></tr>
+          <tr class="repeated-col row-light header-col"></tr>
           <tr class="repeated-col">
-            <th colspan="5">เวลา /Time</th>
+            <th colspan="5" class="text-right">เวลา /Time</th>
           </tr>
           <tr>
-            <th colspan="5">ลายเซ็น /Signature</th>
+            <th colspan="5" class="text-right">ลายเซ็น /Signature</th>
           </tr>
           <tr>
-            <th colspan="5">วันที่ /Date</th>
+            <th colspan="5" class="text-right">วันที่ /Date</th>
           </tr>
-          <tr>
+          <tr class="row-light text-left">
             <th colspan="5">1. ตรวจสอบก่อนทำงาน /Pre-redress checking</th>
           </tr>
           <tr>
-            <td colspan="3">- รุ่นการผลิต /Batch No.</td>
-            <td colspan="2">ตรงกับใบสั่งงาน /In accordance with Job order</td>
+            <td colspan="3" class="text-left">- รุ่นการผลิต /Batch No.</td>
+            <td colspan="2" class="text-left">
+              ตรงกับใบสั่งงาน /In accordance with Job order
+            </td>
           </tr>
           <tr>
-            <td colspan="3">- ลักษณะภายนอกสินค้า /Product Appearance</td>
-            <td colspan="2">
+            <td colspan="3" class="text-left">
+              - ลักษณะภายนอกสินค้า /Product Appearance
+            </td>
+            <td colspan="2" class="text-left">
               ไม่บุบ เสียหาย รั่วซึม /No dent, damage or leakage
             </td>
           </tr>
           <tr>
-            <td colspan="3">- วัสดุประกอบการทำ VAS /VAS material</td>
-            <td colspan="2">
+            <td colspan="3" class="text-left">
+              - วัสดุประกอบการทำ VAS /VAS material
+            </td>
+            <td colspan="2" class="text-left">
               ตรงกับข้อกำหนด /In accordance with specification
             </td>
           </tr>
-          <tr>
-            <th colspan="5">2. ตรวจสอบระหว่างการทำงาน /In process checking</th>
+          <tr class="row-light">
+            <th colspan="5" class="text-left">
+              2. ตรวจสอบระหว่างการทำงาน /In process checking
+            </th>
           </tr>
           <tr>
-            <td colspan="3">- รุ่นการผลิต /Batch No.</td>
+            <td colspan="3" class="text-left">- รุ่นการผลิต /Batch No.</td>
             <td colspan="2">ตรงกับใบสั่งงาน /In accordance with Job order</td>
           </tr>
           <tr>
-            <td colspan="3">- ลักษณะภายนอกสินค้า /Product Appearance</td>
-            <td colspan="2">
+            <td colspan="3" class="text-left">
+              - ลักษณะภายนอกสินค้า /Product Appearance
+            </td>
+            <td colspan="2" class="text-left">
               ไม่บุบ เสียหาย รั่วซึม /No dent, damage or leakage
             </td>
           </tr>
           <tr>
-            <td colspan="3">- ทะเบียนยา /Registration No.</td>
-            <td colspan="2">
+            <td colspan="3" class="text-left">- ทะเบียนยา /Registration No.</td>
+            <td colspan="2" class="text-left">
               ตรงกับข้อกำหนด /In accordance with specification
             </td>
           </tr>
           <tr>
-            <td colspan="3">- เอกสารกำกับยา /Leaflet</td>
-            <td colspan="2">
+            <td colspan="3" class="text-left">- เอกสารกำกับยา /Leaflet</td>
+            <td colspan="2" class="text-left">
               ตรงกับข้อกำหนด /In accordance with specification
             </td>
           </tr>
           <tr>
-            <td colspan="3">- สติกเกอร์ราคา /Price Sticker</td>
-            <td colspan="2">
+            <td colspan="3" class="text-left">
+              - สติกเกอร์ราคา /Price Sticker
+            </td>
+            <td colspan="2" class="text-left">
               ตรงกับข้อกำหนด /In accordance with specification
             </td>
           </tr>
           <tr>
-            <td colspan="3">- โลโก้ /Logo</td>
-            <td colspan="2">
+            <td colspan="3" class="text-left">- โลโก้ /Logo</td>
+            <td colspan="2" class="text-left">
               ตรงกับข้อกำหนด /In accordance with specification
             </td>
           </tr>
           <tr>
-            <td colspan="3">- สติกเกอร์ยาสิ้นอายุ /Expiry date Sticker</td>
-            <td colspan="2">
+            <td colspan="3" class="text-left">
+              - สติกเกอร์ยาสิ้นอายุ /Expiry date Sticker
+            </td>
+            <td colspan="2" class="text-left">
               ตรงกับข้อกำหนด /In accordance with specification
             </td>
           </tr>
           <tr>
-            <td colspan="3">
+            <td colspan="3" class="text-left">
               - จำนวนสินค้าที่สุ่มตรวจ (ชิ้น) /Number of sampling
             </td>
-            <td colspan="2">
+            <td colspan="2" class="text-left">
               ตรงกับข้อกำหนด /In accordance with specification
             </td>
           </tr>
           <tr>
-            <td colspan="3">
+            <td colspan="3" class="text-left">
               - อุณหภูมิ (กรณีห้องเย็น) /Temperature (Cold room)
             </td>
-            <td colspan="2">
+            <td colspan="2" class="text-left">
               ตรงกับข้อกำหนด /In accordance with specification
             </td>
           </tr>
           <tr>
-            <td colspan="3">- หมายเลขใบงาน /Job order no.</td>
-            <td colspan="2">
+            <td colspan="3" class="text-left">- หมายเลขใบงาน /Job order no.</td>
+            <td colspan="2" class="text-left">
               ตรงกับข้อกำหนด /In accordance with specification
             </td>
           </tr>
           <tr>
-            <td colspan="3">-</td>
-            <td colspan="2">
+            <td colspan="3" class="text-left">-</td>
+            <td colspan="2" class="text-left">
               ตรงกับข้อกำหนด /In accordance with specification
             </td>
           </tr>
           <tr>
-            <td colspan="3">-</td>
-            <td colspan="2">
+            <td colspan="3" class="text-left">-</td>
+            <td colspan="2" class="text-left">
               ตรงกับข้อกำหนด /In accordance with specification
             </td>
           </tr>
           <tr>
-            <td colspan="3">-</td>
-            <td colspan="2">
+            <td colspan="3" class="text-left">-</td>
+            <td colspan="2" class="text-left">
               ตรงกับข้อกำหนด /In accordance with specification
             </td>
           </tr>
           <tr>
-            <td colspan="3">-</td>
-            <td colspan="2">
+            <td colspan="3" class="text-left">-</td>
+            <td colspan="2" class="text-left">
               ตรงกับข้อกำหนด /In accordance with specification
             </td>
           </tr>
           <tr>
-            <td colspan="3">-</td>
-            <td colspan="2">
+            <td colspan="3" class="text-left">-</td>
+            <td colspan="2" class="text-left">
               ตรงกับข้อกำหนด /In accordance with specification
             </td>
           </tr>
           <tr>
-            <td colspan="3">
+            <td colspan="3" class="text-left">
               - จำนวนสินค้าภายในกล่อง /Product quantity per box
             </td>
-            <td colspan="2">ครบถ้วน ถูกต้อง /In accordance with pack size</td>
+            <td colspan="2" class="text-left">
+              ครบถ้วน ถูกต้อง /In accordance with pack size
+            </td>
           </tr>
           <tr>
-            <td colspan="3">
+            <td colspan="3" class="text-left">
               - ทิศทางการจัดเรียงสินค้าภายในกล่อง /Product alignment
             </td>
-            <td colspan="2">อยู่ในลักษณะตั้งขึ้น /In upright position</td>
+            <td colspan="2" class="text-left">
+              อยู่ในลักษณะตั้งขึ้น /In upright position
+            </td>
           </tr>
         </table>
-        <div class="dot-input-section">
-          <div>ลายเซ็นผู้ตรวจสอบ / Verified by</div>
-          <div class="dot"></div>
-          <div>วันที่/Date</div>
-          <div class="dot"></div>
+        <div class="mt-3 w-100">
+          <div
+            class="dot-input-section float-right"
+            style="
+              grid-template-columns: 40% 26% 12% 17%;
+              width: 60% !important;
+            "
+          >
+            <div><strong>ลายเซ็นผู้ตรวจสอบ / Verified by</strong></div>
+            <div class="dot"></div>
+            <div><strong>วันที่/Date</strong></div>
+            <div class="dot"></div>
+          </div>
+          <div
+            class="float-right text-center mt-3"
+            style="width: 51% !important"
+          >
+            <strong
+              >(Redress Leader/Supervisor/Assistant manager/Manager)</strong
+            >
+          </div>
         </div>
-        <div>(Redress Leader/Supervisor/Assistant manager/Manager)</div>
       </section>
-      <div class="pt-5 pb-5">Remove later</div>
     </div>
 
     <script src="./jquery.js"></script>
@@ -780,6 +830,7 @@
             var text = $(element[increasement_row]).hasClass("header-col")
               ? index
               : "";
+
             $(element[increasement_row]).append(`<th>${text}</th>`);
           }
           increasement_row++;

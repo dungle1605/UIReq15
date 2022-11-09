@@ -68,12 +68,14 @@
       }
 
       .page-footer {
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+        justify-items: center;
         position: fixed;
         bottom: 0;
         width: 100%;
         opacity: 0.6;
         counter-increment: page;
-        page-break-before: always;
       }
 
       .page-header {
@@ -192,13 +194,14 @@
         .page-footer > .page-counter::after {
           content: "Page " counter(page) " of " counter(pages);
         }
-      }
 
-      @media screen {
-        /* .page-footer > .page-counter::before {
-          counter-increment: page;
-          content: "Page " counter(page) " of " counter(pages);
-        } */
+        @page {
+          size: A4 portrait;
+        }
+
+        @page :last {
+          size: A4 landscape;
+        }
       }
     </style>
   </head>
@@ -224,7 +227,12 @@
 
       <div class="page-footer">
         <div class="page-counter"></div>
-        <div>FM-LTS-RD-xx Rev.00 Effective Date xx xxx xxx</div>
+        <div>
+          FM-LTS-RD-xx Rev.00 Effective Date<span id="footer-date"
+            >&nbsp;20&nbsp;</span
+          ><span id="footer-month">&nbsp;Nov&nbsp;</span
+          ><span id="footer-year">&nbsp;2022&nbsp;</span>
+        </div>
       </div>
       <table class="page-break-table">
         <thead>
@@ -503,7 +511,7 @@
                     <div>
                       เลขที่ใบสั่งงานก่อนหน้านี้ /Previous Job Order No.
                     </div>
-                    <div class="dot">Lorem ipsum dolor sit amet.</div>
+                    <div class="dot"></div>
                   </div>
                 </section>
                 <section
@@ -664,7 +672,7 @@
                     </h3>
                     <div
                       class="dot-input-section mt-2"
-                      style="grid-template-columns: 18% 15% 18% 19% 15% 10%"
+                      style="grid-template-columns: 18% 15% 18% 18% 16% 10%"
                     >
                       <div>รหัสสินค้า /Product Code</div>
                       <div class="dot text-center"></div>
@@ -693,7 +701,7 @@
                       <div>เวลา /Time</div>
                       <div class="dot text-center"></div>
                       <div>หมายเลขรีเดรสสเปค /Redress Specification No.</div>
-                      <div class="dot text-center">MLL009301RD00001</div>
+                      <div class="dot text-center"></div>
                     </div>
                   </div>
                   <table
@@ -929,8 +937,7 @@
         '	 <div class="product-info">' +
         '	 <input type="checkbox" class="d-none"/>' +
         '	 <span class="text-justify d-none"' +
-        "	 >Lorem ipsum dolor sit amet consectetur adipisicing elit." +
-        "	Magni, officia.</span" +
+        "	 >#input_product_value_over_here</span" +
         "	 >" +
         "	</div>" +
         '	<div class="spec-and-add-section">' +
